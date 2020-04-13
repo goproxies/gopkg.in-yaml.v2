@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: octokit/request-action@v2.x
         with:
-          route: PATCH /repos/goproxies/%!s(MISSING)/import
+          route: PATCH /repos/goproxies/:repository/import
           repository: ${{ github.repository }}
         evn:
             GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

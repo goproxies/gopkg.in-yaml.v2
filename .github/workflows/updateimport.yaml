@@ -1,0 +1,14 @@
+name: Update Import
+on:
+ schedule:
+  - cron: '0 0 * * *'
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: octokit/request-action@v2.x
+        with:
+          route: PATCH /repos/goproxies/%!s(MISSING)/import
+          repository: ${{ github.repository }}
+        evn:
+            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

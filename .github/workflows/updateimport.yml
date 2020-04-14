@@ -10,5 +10,5 @@ jobs:
         with:
           route: PATCH /repos/:repository/import
           repository: ${{ github.repository }}
-        evn:
+        env:
             GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

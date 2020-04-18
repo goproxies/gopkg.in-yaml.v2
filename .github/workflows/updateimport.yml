@@ -10,5 +10,6 @@ jobs:
         with:
           route: PATCH /repos/:repository/import
           repository: ${{ github.repository }}
+          auth: ${{ GITHUB_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -9,7 +9,6 @@ jobs:
       - uses: octokit/request-action@v2.x
         with:
           route: PATCH /repos/:repository/import
-          repository: ${{ github.repository }}
-          auth: ${{ env.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}          
     env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

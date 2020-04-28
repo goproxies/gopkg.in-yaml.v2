@@ -6,9 +6,8 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: octokit/request-action@v2.x
+      - uses: atactions/import-sync@v1
         with:
-          route: PATCH /repos/:repository/import
-          repository: ${{ github.repository }}          
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          url: 'https://gopkg.in/yaml.v2'
